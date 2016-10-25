@@ -1,0 +1,34 @@
+.fa-stack{
+	.fa-xs{
+		font-size:0.25em;
+	}
+	.fa-sm{
+		font-size:0.5em;
+	}
+	.fa-md{
+		font-size:0.75em;
+	}
+	.fa-lg{
+		font-size:1.25em;
+	}
+	.fa-xl{
+		font-size:1.5em;
+	}
+}
+
+.fa-list{
+	ul&{
+		&:before{
+			content:"";
+		}
+	}
+	>li{
+		padding-left:@base-margin;
+		&:before{
+			.fa();
+			content:"\f0da";
+			width:@fa-width;
+			color:@brand-primary;
+		}
+	}
+}

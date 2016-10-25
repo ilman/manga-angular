@@ -1,0 +1,48 @@
+/* CSS Document */
+
+.sg-divider{
+	border-color:@sg-divider-border-color; 
+	border-width:1px 0 0; 
+	margin:@sg-divider-margin auto; 
+	display:block; 
+	clear:both;
+
+	&.divider-solid-line{
+		border-style:solid;
+	}
+	&.divider-dashed-line{
+		border-style:dashed;
+	}
+	&.divider-dotted-line{
+		border-style:dotted;
+	}
+	&.divider-double-solid-line{
+		border-style:solid;	border-width:1px 0; height:4px;
+	}
+	&.divider-double-dashed-line{
+		border-style:dashed; border-width:1px 0; height:4px;
+	}
+	&.divider-double-dotted-line{
+		border-style:dotted; border-width:1px 0; height:4px;
+	}
+	&.divider-bold-line{
+		border-width:6px 0 0; border-style:solid;	
+	}
+
+	&.divider-xs{
+		width:10%;
+		min-width:50px;
+	}
+	&.divider-sm{
+		width:25%;
+		min-width:100px;
+	}
+	&.divider-md{
+		width:50%;
+		min-width:150px;
+	}
+	&.divider-lg{
+		width:75%;
+		min-width:200px;
+	}
+}

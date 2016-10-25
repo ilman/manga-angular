@@ -1,0 +1,31 @@
+.sg-abs-center{
+	display: table;
+	overflow: hidden;
+	height:100%;
+	width:100%;
+
+	.inner{
+		display: table-cell; 
+		vertical-align: middle; 
+		width: 100%; 
+		margin: 0 auto; 
+		text-align: center;
+	}
+}
+  
+
+.ie7{
+	.sg-abs-center{
+		position: relative;
+
+		.inner{
+			position: absolute;
+			top: 50%;
+
+			.element{
+				position: relative;
+				top: -50%;
+			}
+		}
+	}
+}

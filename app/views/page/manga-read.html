@@ -1,0 +1,5 @@
+<div ng-controller="MangaReadController">
+	<slick infinite="false" slides-to-show="1" initial-slide="0" lazy-load="progressive">
+		<div class="slide-page" ng-repeat="item in result"><img data-lazy="{{ item }}" /></div>
+	</slick>
+</div>

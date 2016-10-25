@@ -1,0 +1,19 @@
+<div class="row" ng-controller="MangaListController">
+	<div class="col-sm-2 col-xs-4" ng-repeat="item in result">
+		<!-- <img src="http://bradleyritchie.me/manga2/public/member/manga/thumb/nhentai?image={{ item.image }}" alt="image" /> -->
+		<div class="sg-block block-manga">
+			<div class="block-thumb">
+				<img src="{{ item.manga_cover }}" alt="image" />
+			</div>
+			<!-- block-thumb -->
+			<div class="block-body" same-height="hello">
+				<h5 class="manga-title"><a href="#/manga/{{ item.id }}">{{ item.manga_title }}</a></h5>
+				<h6>{{ item.manga_author }}</h6>
+			</div>
+			<!-- block-body -->
+		</div>
+		<!-- sg-block -->
+	</div>
+	<!-- col -->
+</div>
+<!-- row -->

@@ -1,0 +1,113 @@
+.sg-tabs{
+	.nav-tabs{
+		margin-bottom: @sg-tabs-nav-margin; 
+		li{
+			color: @sg-tabs-text-color;
+		}
+		a{
+			border-radius:0 !important;
+			color:inherit;
+		}
+	}
+}
+
+.sg-tabs-border{
+	border: @sg-tabs-border;
+	.nav-tabs{
+		margin-bottom:0 !important;
+		a{
+			border-top:0 none !important; 
+			border-left:0 none !important; 
+			border-right:@sg-tabs-border; 
+			margin-right:0;
+		}
+	}
+	.tab-pane{ padding:@sg-tabs-body-padding; }
+}
+
+.sg-tabs-border-body{
+	.nav-tabs{
+		margin-bottom:0 !important;
+		border-left:@sg-tabs-border !important;
+		a{
+			border-top:@sg-tabs-border; 
+			border-left:0 none !important; 
+			border-right:@sg-tabs-border; 
+			margin-right:0;
+		}
+	}
+	.tab-pane{ 
+		padding:@sg-tabs-body-padding; 
+		border:@sg-tabs-border; 
+		border-top:0 none;
+	}
+}
+
+.sg-tabs-accent{
+	.nav-tabs{
+		a{
+			margin-right:0;
+		}
+		.active{
+			border-top-width:3px; border-top-style:solid;
+			a{
+				border-top:0 none !important; padding-top:8px;
+			}
+		}
+	}
+	&.sg-tabs-border-body, &.sg-tabs-border{
+		.nav-tabs{
+			a{
+				&:hover{
+					border-bottom:@sg-tabs-border;
+				} 
+			}
+		}
+	}
+}
+
+.sg-tabs-block{
+	.nav-tabs{
+		border-bottom: 0 none;
+		a{
+			margin-right:0 !important; 
+			border:0 none !important; 
+			border-left: @sg-tabs-border !important;	
+			background-color: @sg-tabs-nav-bg-color;
+			&:hover{
+				background-color: @sg-tabs-nav-hover-bg-color;
+			}
+		}
+		li{
+			&:first-child{
+				a{ border-left:0 none !important; }
+			}
+		}
+		.active{
+			
+			a{
+				
+			}
+		}
+	}
+	&.sg-tabs-border-body, &.sg-tabs-border{
+		.nav-tabs{
+			border-bottom:@sg-tabs-border;
+			a{ border:@sg-tabs-border !important; border-width:1px 1px 1px 0 !important; }
+		}
+	}
+}
+
+/*----dynamic----*/
+
+.sg-tabs-block .nav-tabs .active a, 
+.sg-tabs-block .nav-tabs .active a:hover, 
+.sg-tabs-block .nav-tabs .active a:focus{
+	background-color:@sg-tabs-nav-active-bg-color !important; 
+	border-color:@sg-tabs-nav-active-border-color !important; 
+	color:@sg-tabs-nav-active-text-color; 
+}
+
+.sg-tabs-accent .nav-tabs .active{ 
+	border-top-color:@sg-tabs-nav-active-border-color !important; 
+}

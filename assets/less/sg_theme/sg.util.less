@@ -1,0 +1,152 @@
+.lead{ font-size:1.4em; }
+
+.align-left{ text-align:left; }
+.align-right{ text-align:right; }
+.align-center{ text-align:center; }
+
+.static{ position:static !important; }
+.absolute{ position:absolute !important; }
+.fixed{ position:fixed !important; }
+.relative{ position:relative !important; }
+
+.bordered{ border:@base-border; }
+.border-thin{ border-width:1px !important; }
+.no-border{ border:0 none !important; }
+
+.padding-sm{ padding:@base-padding/2 !important; }
+.padding-md{ padding:@base-padding; }
+.padding-lg{ padding:@base-padding*1.5 !important; }
+.no-padding{ padding:0 !important; }
+.no-side-padding{ padding-left:0 !important; padding-right:0 !important; }
+.no-topbottom-padding{ padding-top:0 !important; padding-bottom:0 !important; }
+.no-top-padding{ padding-top:0 !important; }
+.no-bottom-padding{ padding-bottom:0 !important; }
+
+.margin-xs{ margin:@base-margin/4 !important; }
+.margin-sm{ margin:@base-margin/2 !important; }
+.margin-md{ margin:@base-margin; }
+.margin-lg{ margin:@base-margin*1.5 !important; }
+.no-margin{ margin:0 !important; }
+.no-side-margin{ margin-left:0 !important; margin-right:0 !important; }
+.no-topbottom-margin{ margin-top:0 !important; margin-bottom:0 !important; }
+.no-top-margin{ margin-top:0 !important; }
+.no-bottom-margin{ margin-bottom:0 !important; }
+.margin-auto{ margin:auto !important; }
+
+.no-overflow{ overflow:hidden; }
+
+.inline-block{ display:inline-block; }
+.inline-block{ display:inline-block; }
+.inline-left{ float:left; margin-right:@base-margin; }
+
+@media (max-width: @screen-xs-max){
+	.text-center-xs{ 
+		text-align:center !important;
+	}
+}
+
+@media (max-width: @screen-xs-max){
+	.block-xs{ 
+		display:block !important; 
+		float:none !important;
+		margin-left:0 !important;
+		margin-right:0 !important; 
+	}
+}
+
+/*----border+outline color list---*/
+@list: primary, success, danger, warning, info;
+
+@list-length:5;
+
+.loop-bg(@i) when (@i > 0) {
+   @str: e(extract(@list, @i));
+   @stre: e(%('brand-%s',@str));
+  .loop-bg((@i - 1));
+    .bg-@{str}{ background-color: @@stre !important; }
+}
+
+.loop-bg(@list-length); 
+
+/*----border+outline color list---*/
+
+.loop-border(@i) when (@i > 0) {
+   @str: e(extract(@list, @i));
+   @stre: e(%('brand-%s',@str));
+  .loop-border((@i - 1));
+    .border-@{str}, .outline-@{str}{ border-color: @@stre !important; }
+}
+
+.loop-border(@list-length);
+
+.border-none{ border:0 none !important; }
+.border-default{ border-color:#ddd; }
+
+/*----text+outline color list---*/
+
+.loop-text(@i) when (@i > 0) {
+   @str: e(extract(@list, @i));
+   @stre: e(%('brand-%s',@str));
+  .loop-text((@i - 1));
+    .text-@{str}, .outline-@{str}{ color: @@stre !important; }
+}
+
+.loop-text(@list-length); 
+
+.text-default{ color:@text-color !important; }
+
+/*----outline color list---*/
+
+*[class^='outline-'], *[class*=' outline-']{
+	background-color:transparent !important;
+	border-width:2px;
+	border-style:solid;
+	font-weight:600;
+}
+
+.shape-rounded{ box-radius:10%; }
+.shape-circle{ box-radius:50%; }
+
+.text-ucase{ text-transform:uppercase !important; }
+.text-lcase{ text-transform:lowercase !important; }
+.text-capital{ text-transform:capitalize !important; }
+.text-bold{ font-weight:600 !important; }
+.text-thin{ font-weight:100 !important; }
+.text-italic{ font-style:italic !important; }
+.text-invert{ color:#fff; }
+.text-sm{ font-size:0.9em; line-height:1.1em; }
+.text-md{ font-size:1.1em; line-height:1.1em; }
+.text-lg{ font-size:1.5em; line-height:1.1em; }
+.text-1x{ font-size:1em; line-height:1.1em; }
+.text-2x{ font-size:2em; line-height:1.1em; }
+.text-3x{ font-size:3em; line-height:1.1em; }
+.text-4x{ font-size:4em; line-height:1.1em; }
+.text-5x{ font-size:5em; line-height:1.1em; }
+.text-6x{ font-size:6em; line-height:1.1em; }
+
+.list-blank{
+	padding:0; margin:0; 
+	li{ list-style:none; }
+	>li{ border:0 none !important; }
+}
+
+.animate{
+	&, &:before{
+		transition:all 0.2s ease;
+		-webkit-transition:all 0.2s ease;
+	}
+}
+
+.hover-bg{
+	&:hover{
+		background:#333; color:#fff;
+		
+		.block-circle{ background:#fff; color:#333; }
+		.icon-wrapper{
+			-webkit-transform: scale(2); 
+			transform: scale(2);	
+		}
+	}
+}
+
+.sg-anim-counter{ font-size:52px; line-height:1em; }

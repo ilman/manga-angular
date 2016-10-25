@@ -1,0 +1,21 @@
+.sg-spacer{
+	padding:0 0 @sg-spacer-margin;
+	clear:both;
+	&.space-lg{ padding:0 0 @sg-spacer-margin*3; }
+	&.space-md{ padding:0 0 @sg-spacer-margin*2; }
+	&.space-sm{ padding:0 0 @sg-spacer-margin/2}
+}
+
+.sg-new-line{ 
+	display:block; 
+}
+
+.sg-hr{
+	height:1px; 
+	display:block; 
+	position:relative;
+	margin:@sg-hr-margin 0;
+	&.hr-short{ 
+		.inner{ width:30%; margin:0 auto; border-bottom:@sg-hr-border; display:block; }
+	}
+}

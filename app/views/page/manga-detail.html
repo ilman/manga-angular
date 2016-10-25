@@ -1,0 +1,36 @@
+<div ng-controller="MangaDetailController">
+	
+	<ul class="nav nav-tabs"> 
+		<li class="active"><a href="#/manga/{{ item.id }}">Info</a></li> 
+		<li><a href="#/manga/{{ item.id }}/chapter">Chapter</a></li> 
+	</ul>
+
+	<div class="sg-block block-manga">
+		<div class="block-thumb align-left">
+			<img src="{{ item.manga_cover }}" alt="image" />
+		</div>
+		<!-- block-thumb -->
+		<div class="block-body">
+			<h2 class="manga-title">{{ item.manga_title }}</h2>
+			<h5>{{ item.manga_author }}</h5>
+		</div>
+		<!-- block-body -->
+	</div>
+	<!-- sg-block -->
+
+	<p>
+		<a class="btn btn-primary">Download</a>
+		<a class="btn btn-primary" href="#/manga/{{ item.id }}/chapter">Read</a>
+	</p>
+
+	<dl>
+		<dt>Last Updated</dt>
+		<dd>3 Days ago</dd>
+
+		<dt>Tags</dt>
+		<dd><a class="label label-primary">Action</a> <a class="label label-primary">Comedy</a></dd>
+
+		<dt>Description</dt>
+		<dd>{{ item.manga_desc }}</dd>
+	</dl>
+</div>

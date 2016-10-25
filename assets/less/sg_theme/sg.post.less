@@ -1,0 +1,109 @@
+.sg-post-list{
+	margin:0 -@sg-post-list-margin;
+	margin-bottom:@sg-post-list-margin; 
+	padding:0;
+		
+	&.list-separate{
+		.post-item{ 
+			padding:@sg-post-list-padding 0; 
+			margin:0 @sg-post-list-margin; 
+			border-top:@sg-post-list-border; 
+			&:first-child{ border-top:0 none; }
+		}	
+	}
+	&.list-full{
+		padding-left:70px;
+		.post-item{ 
+			position:relative;
+		}
+		.post-title{
+			font-size:1.6em;
+		}
+		.post-meta-side{
+			position:absolute; 
+			top:0; 
+			left:-70px;
+		}
+	}
+	&.list-masonry{
+		min-width:100% !important;
+	}
+	&.list-small{
+		.post-item{
+			margin-bottom:@sg-post-list-margin;
+		}
+	}
+
+
+	&.post-list-sm{
+		margin:0 -10px;
+		.post-item{
+			margin-bottom:20px;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	.post-item{ 
+		margin-bottom:@sg-post-list-margin * 2;
+		z-index:auto;
+		list-style:none;	
+		.thumb-date{ width:100/12%; }
+	}
+	.post-title{
+		font-size:1.3em; 
+		font-weight:600;
+	}
+}
+
+.post-meta{ 
+	color: @sg-post-meta-text-color; 
+	margin-bottom: @sg-post-meta-margin; 
+	font-size:0.9em;
+	
+	a, a:link, a:visited{ color:@sg-post-meta-link-color; }
+	.btn-primary{ color:#fff !important; }
+	&.bottom{
+		margin-bottom: 0;
+	}
+}
+
+.post-meta-side{
+	> div{ margin-bottom:@sg-post-margin; }
+	.meta-date{
+		font-size:1.2em; border:@sg-post-border; padding:5px @sg-post-padding; text-align:center; background:#fff;
+		*{ display:block; line-height:1em; font-weight:600; }
+		.day{ font-size:2em; }
+		.month{ 
+			text-transform:uppercase; background:@brand-primary; border:darken(@brand-primary, 5%) solid 1px; 
+			color:#fff; padding:5px 15px; margin:-6px -16px 5px; 
+		}
+	}
+}
+
+.post-date-thumb{ 
+	padding:10px; background:#555; color:#fff; text-align:center;
+	> *{ display:block; line-height:1em; }
+	> .date{ font-size:30px; }
+	> .month{ font-size:16px; }
+}
+
+.post-excerpt{
+	margin-bottom:@sg-post-list-margin;
+}
+
+.filter-masonry{
+	li{
+		float:none; 
+		display:inline-block;
+	}
+}
+
+@media (max-width: @screen-xs-max){
+	.post-list{
+		&.list-masonry{
+			min-width:0 !important;
+			margin:0 auto;
+		}
+	}
+}
