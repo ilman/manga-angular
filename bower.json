@@ -20,6 +20,7 @@
     "bootstrap": "^3.3.7",
     "ui-bootstrap": "^2.2.0",
     "AdminLTE": "admin-lte#^2.3.7",
-    "angular-ui-router": "^0.3.1"
+    "angular-ui-router": "^0.3.1",
+    "slick-carousel": "^1.6.0"
   }
 }

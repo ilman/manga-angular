@@ -111,13 +111,62 @@ adminApp.controller('MangaChapterController', ['$scope', '$http', '$state', func
 	})
 }])
 
-adminApp.controller('MangaReadController', ['$scope', '$http', '$state', function($scope, $http, $state){
+adminApp.controller('MangaReadController', ['$scope', '$http', '$state', '$window', function($scope, $http, $state, $window){
 	// http://localhost/manga-api/public/api/browse
 	$http.get('http://localhost/project-lumen/mangacrawler/public/api/manga/' + $state.params.manga_id + '/chapter/' + $state.params.chapter_id ).success(function(data){
 		console.log(data);
 		$scope.manga_id = $state.params.manga_id;
 		$scope.chapter_id = $state.params.chapter_id;
 		$scope.result = data.result;
+
+		$scope.slickCurrentIndex = 0;
+		$scope.slickConfig = {
+			initialSlide: $scope.slickCurrentIndex,
+			lazyLoad: 'progressive',
+			arrows: true,
+			infinite: false,
+			method: {},
+			event: {
+				beforeChange: function (event, slick, currentSlide, nextSlide) {
+				console.log('before change', Math.floor((Math.random() * 10) + 100));
+				},
+				afterChange: function (event, slick, currentSlide, nextSlide) {
+				$scope.slickCurrentIndex = currentSlide;
+				},
+				breakpoint: function (event, slick, breakpoint) {
+				console.log('breakpoint');
+				},
+				destroy: function (event, slick) {
+				console.log('destroy');
+				},
+				edge: function (event, slick, direction) {
+				console.log('edge');
+				},
+				reInit: function (event, slick) {
+				console.log('re-init');
+				},
+				init: function (event, slick) {
+				console.log('init');
+				},
+				setPosition: function (evnet, slick) {
+				console.log('setPosition');
+				},
+				swipe: function (event, slick, direction) {
+				console.log('swipe');
+				}
+			}
+		};
+
+		$scope.overlayClick = function(param){
+			$window.scrollTo(0, 0);
+			if(param=='next'){
+				$scope.slickConfig.method.slickNext();
+			}
+			else if(param=='prev'){
+				$scope.slickConfig.method.slickPrev();
+			}
+		}
+
 	})
 }])
 

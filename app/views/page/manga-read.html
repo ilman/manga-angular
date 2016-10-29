@@ -1,5 +1,14 @@
-<div ng-controller="MangaReadController">
-	<slick infinite="false" slides-to-show="1" initial-slide="0" lazy-load="progressive">
+<div ng-controller="MangaReadController" id="manga-read">
+	<slick settings="slickConfig">
 		<div class="slide-page" ng-repeat="item in result"><img data-lazy="{{ item }}" /></div>
 	</slick>
+	<a class="btn-overlay btn-prev" ng-click="overlayClick('prev')">&nbsp;</a>
+	<a class="btn-overlay btn-next" ng-click="overlayClick('next')">&nbsp;</a>
 </div>
+
+<style>
+	#manga-read{ position:relative; }
+	#manga-read .btn-overlay{ position:absolute; height:100%; width:50%; top:0; }
+	#manga-read .btn-overlay.btn-next{ right:0; }
+	#manga-read .btn-overlay.btn-prev{ left:0; }
+</style>

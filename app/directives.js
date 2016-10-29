@@ -60,4 +60,17 @@ adminApp.directive('includeReplace', function () {
 		}
 	};
 	return sameHeight;
+})
+.directive('myslick', function($timeout) {
+	return {
+		restrict: 'A',
+		scope: {
+			config: '='
+		},
+		link: function(scope, el, attrs) {
+			$timeout((function() {
+				el.slick(scope.config);
+			}), 1000);
+		}
+	}
 });
