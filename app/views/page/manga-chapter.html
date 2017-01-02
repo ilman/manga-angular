@@ -1,7 +1,10 @@
 <div ng-controller="MangaChapterController">
 	<div class="row">
-		<div class="col-sm-1" ng-repeat="item in result">
-			<a class="btn btn-primary btn-block btn-chapter" href="#/manga/{{ manga_id }}/chapter/{{ item.id }}">{{ item.id }}</a>
+		<div class="col-sm-12" ng-repeat="item in result">
+			<a class="btn-chapter chapter-li" href="#/manga/{{ manga_id }}/chapter/{{ item.id }}">
+				<span>{{ item.chapter_title }}</span>
+				<small class="pull-right">{{ item.chapter_date }}</small>
+			</a>
 		</div>
 		<!-- col -->
 	</div>

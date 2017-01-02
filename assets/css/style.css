@@ -1284,6 +1284,15 @@ dd {
   display: block;
   margin: 15px 0;
 }
+.chapter-li {
+  border-radius: 0;
+  border-bottom: #b4d1ea solid 1px;
+  padding: 5px;
+  margin: 0;
+}
+.chapter-li small {
+  color: #999;
+}
 .slide-page {
   text-align: center;
 }
